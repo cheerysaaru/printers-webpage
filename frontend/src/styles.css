@@ -1021,24 +1021,24 @@ footer { padding: 70px 32px 34px; }
     display: flex;
   }
 
-  .nav-links a {
-    font-size: 20px;
-    padding: 12px 0;
-  }
-
-  .nav-mobile-ctas {
+  .nav-ctas {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    margin-top: 20px;
+    margin-top: 24px;
     width: 100%;
     max-width: 280px;
   }
 
-  .nav-mobile-ctas .btn {
+  .nav-ctas .btn {
     width: 100%;
     justify-content: center;
     text-align: center;
+  }
+
+  .nav-links a {
+    font-size: 20px;
+    padding: 12px 0;
   }
 
   .nav-ctas { display: none; }

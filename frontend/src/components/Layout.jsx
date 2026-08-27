@@ -44,14 +44,10 @@ export default function Layout({ children }) {
             <Link to="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link>
             <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
             <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
-            <div className="nav-mobile-ctas">
+            <div className="nav-ctas">
               <button className="btn btn-outline nav-cta" onClick={() => { setMenuOpen(false); setQuoteOpen(true); }}>Get a Quote</button>
               <a href={whatsappLink()} className="btn btn-primary nav-cta" target="_blank" rel="noreferrer">WhatsApp Us</a>
             </div>
-          </div>
-          <div className="nav-ctas">
-            <button className="btn btn-outline nav-cta" onClick={() => setQuoteOpen(true)}>Get a Quote</button>
-            <a href={whatsappLink()} className="btn btn-primary nav-cta" target="_blank" rel="noreferrer">WhatsApp Us</a>
           </div>
           <button className={`hamburger ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu" aria-expanded={menuOpen}>
             <span></span>
