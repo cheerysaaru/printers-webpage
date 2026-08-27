@@ -1,0 +1,20 @@
+{
+  "name": "sl-printer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SL Printer full-stack application",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "start": "npm run start --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "prisma": "^6.7.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3"
+  }
+}
