@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import QuoteModal from "./QuoteModal";
+import ContactModal from "./ContactModal";
 
 const whatsappNumber = "94777278833";
 const whatsappLink = (product = "general inquiry") =>
@@ -9,6 +10,8 @@ const whatsappLink = (product = "general inquiry") =>
 export default function Layout({ children }) {
   const [scrolled, setScrolled] = useState(false);
   const [quoteOpen, setQuoteOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -19,23 +22,42 @@ export default function Layout({ children }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setMenuOpen(false);
   }, [location.pathname]);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
 
   return (
     <div className="site">
       <header className={scrolled ? "scrolled" : ""}>
         <nav>
           <Link to="/" className="logo-link">Screen Line Printers</Link>
-          <div className="nav-links">
-            <Link to="/services">Services</Link>
-            <Link to="/portfolio">Portfolio</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
+          <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+            <Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link>
+            <Link to="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link>
+            <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
+            <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
+            <div className="nav-mobile-ctas">
+              <button className="btn btn-outline nav-cta" onClick={() => { setMenuOpen(false); setQuoteOpen(true); }}>Get a Quote</button>
+              <a href={whatsappLink()} className="btn btn-primary nav-cta" target="_blank" rel="noreferrer">WhatsApp Us</a>
+            </div>
           </div>
           <div className="nav-ctas">
             <button className="btn btn-outline nav-cta" onClick={() => setQuoteOpen(true)}>Get a Quote</button>
             <a href={whatsappLink()} className="btn btn-primary nav-cta" target="_blank" rel="noreferrer">WhatsApp Us</a>
           </div>
+          <button className={`hamburger ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu" aria-expanded={menuOpen}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </nav>
       </header>
 
@@ -76,16 +98,18 @@ export default function Layout({ children }) {
         </div>
       </footer>
 
-      <button className="wa-float" onClick={() => setQuoteOpen(true)} aria-label="Get a Quote">
+      <button className="wa-float" onClick={() => setContactOpen(true)} aria-label="Contact Us">
         <div className="wa-float-inner">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4c-4.34 0-7.87 3.53-7.87 7.87 0 1.39.36 2.74 1.05 3.93L4 20l4.32-1.13a7.83 7.83 0 0 0 3.73.95h.01c4.34 0 7.87-3.53 7.87-7.87 0-2.1-.82-4.08-2.33-5.63Zm-5.55 12.1h-.01a6.53 6.53 0 0 1-3.33-.91l-.24-.14-2.48.65.66-2.42-.16-.25a6.53 6.53 0 0 1-1-3.48c0-3.61 2.94-6.55 6.56-6.55a6.5 6.5 0 0 1 4.63 1.92 6.5 6.5 0 0 1 1.92 4.63c0 3.62-2.94 6.55-6.55 6.55Zm3.6-4.9c-.2-.1-1.17-.58-1.35-.64-.18-.07-.31-.1-.44.1-.13.19-.5.64-.62.78-.11.13-.23.15-.42.05-.2-.1-.83-.3-1.58-.97-.58-.52-.98-1.16-1.09-1.36-.11-.19-.01-.3.09-.4.09-.09.2-.23.3-.35.1-.11.13-.19.2-.32.06-.13.03-.25-.02-.35-.05-.1-.44-1.06-.6-1.45-.16-.38-.32-.33-.44-.33-.11 0-.24-.02-.37-.02-.13 0-.35.05-.53.25-.18.19-.7.68-.7 1.66s.72 1.92.82 2.06c.1.13 1.42 2.17 3.44 3.04.48.21.86.33 1.15.42.48.15.92.13 1.27.08.39-.06 1.17-.48 1.34-.94.16-.46.16-.86.11-.94-.05-.09-.18-.14-.38-.24Z" fill="currentColor"/>
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2Zm0 14H5.17L4 17.17V4h16v12Z" fill="currentColor"/>
+            <path d="M7 9h2v2H7Zm4 0h2v2h-2Zm4 0h2v2h-2Z" fill="currentColor"/>
           </svg>
-          <span className="wa-float-text">Get a Quote</span>
+          <span className="wa-float-text">Contact Us</span>
         </div>
       </button>
 
       <QuoteModal isOpen={quoteOpen} onClose={() => setQuoteOpen(false)} />
+      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
     </div>
   );
 }
