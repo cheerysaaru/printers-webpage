@@ -1,72 +1,26 @@
-import { StrictMode, useState } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { HashRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import Portfolio from "./pages/Portfolio";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import "./styles.css";
 
-const whatsappNumber = "94777278833";
-const whatsappText = "Hello Screen Line Printers, I would like to request a printing quotation.";
-const whatsappLink = (message = whatsappText) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-const services = [
-  { name: "Wedding invitations", type: "Signature", image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85", text: "Thoughtful paper, considered details and a finish worthy of the day." },
-  { name: "Business stationery", type: "For your brand", image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=900&q=85", text: "Business cards, letterheads and envelopes that make a quiet impression." },
-  { name: "Custom packaging", type: "Made to order", image: "https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=900&q=85", text: "Boxes, cake boxes, stickers and labels built around your product." },
-];
-const gallery = [
-  { name: "The invitation suite", category: "Wedding", image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85" },
-  { name: "A considered beginning", category: "Engagement", image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85" },
-  { name: "The little details", category: "Custom", image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=900&q=85" },
-  { name: "Made for a table", category: "Birthday", image: "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=900&q=85" },
-  { name: "Brand in hand", category: "Corporate", image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85" },
-];
-
-function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [galleryFilter, setGalleryFilter] = useState("All");
-  const [quoteSent, setQuoteSent] = useState(false);
-  const [tracking, setTracking] = useState(false);
-  const [fileName, setFileName] = useState("");
-  const filteredGallery = galleryFilter === "All" ? gallery : gallery.filter((item) => item.category === galleryFilter);
-  const closeMenu = () => setMenuOpen(false);
-
-  return (
-    <div className="site-shell">
-      <div className="topline"><span>Screen Line Printers</span><span>Colombo 11, Sri Lanka</span><a href="tel:+94777278833">077 727 8833</a></div>
-      <header className="nav-wrap">
-        <a className="brand" href="#top" aria-label="Screen Line Printers home"><span className="brand-mark">SL</span><span>Screen Line<br /><i>Printers</i></span></a>
-        <button className="menu-toggle" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>Menu <span>{menuOpen ? "-" : "+"}</span></button>
-        <nav className={menuOpen ? "nav open" : "nav"}><a href="#invitations" onClick={closeMenu}>Invitations</a><a href="#services" onClick={closeMenu}>Services</a><a href="#process" onClick={closeMenu}>Our process</a><a href="#contact" onClick={closeMenu}>Contact</a><a className="nav-cta" href="#quote" onClick={closeMenu}>Request a quote <span>-></span></a></nav>
-      </header>
-
-      <main id="top">
-        <section className="hero section-pad"><div className="hero-copy"><p className="eyebrow">Independent print studio / Est. 2006</p><h1>Printed with purpose.<br /><em>Designed to be remembered.</em></h1><p className="hero-lede">From elegant wedding invitations to professional stationery, packaging and custom prints - we turn your ideas into beautifully finished prints.</p><div className="hero-actions"><a className="button dark" href="#quote">Request a quote <span>-></span></a><a className="text-link" href={whatsappLink()} target="_blank" rel="noreferrer">WhatsApp us <span>-></span></a></div></div><div className="hero-image image-frame"><img src={services[0].image} alt="Elegant wedding invitation details" /><span className="image-note">Paper, ink<br />& intention</span></div><div className="hero-stamp">18<br /><small>years of<br />making</small></div></section>
-
-        <section className="experience section-pad"><p className="eyebrow">A little history</p><div className="experience-grid"><h2>18 years of turning ideas<br /><em>into something you can hold.</em></h2><p>Screen Line Printers is a small-to-medium-scale printing studio in the heart of Pettah. We bring a careful eye and a human touch to every invitation, card and custom print we make.</p></div><div className="stats"><div><strong>18+</strong><span>Years experience</span></div><div><strong>Custom</strong><span>Designs</span></div><div><strong>Digital</strong><span>Printing</span></div><div><strong>Offset</strong><span>Printing</span></div><div><strong>Screen</strong><span>Printing</span></div></div></section>
-
-        <section className="feature section-pad" id="invitations"><div className="section-heading"><div><p className="eyebrow">01 / The signature collection</p><h2>Made for your most<br /><em>important moments.</em></h2></div><a className="text-link" href="#quote">Explore invitations <span>-></span></a></div><div className="feature-grid"><div className="feature-image image-frame"><img src={gallery[0].image} alt="Wedding invitation suite placeholder" /><span className="placeholder-label">Image placeholder / replace with client work</span></div><div className="feature-details"><p>Wedding / Engagement / Birthday / Corporate / Custom</p><h3>Not just an invitation.<br />A first impression.</h3><p className="muted">Wedding invitations or any other kinds of invitations - talk us through what you are imagining, and we will help confirm the artwork, paper and finish.</p><a className="button outline" href="#quote">Start your invitation <span>-></span></a></div></div></section>
-
-        <section className="services section-pad" id="services"><div className="section-heading"><div><p className="eyebrow">02 / What we make</p><h2>Good ideas deserve<br /><em>good paper.</em></h2></div><p className="section-aside">Business cards, invitations, wedding cards, letterheads, envelopes, stickers, labels, packaging, boxes, bill books and cake boxes.</p></div><div className="service-list">{services.map((service, index) => <article className={`service-item item-${index + 1}`} key={service.name}><div className="service-image image-frame"><img src={service.image} alt={`${service.name} placeholder`} /><span>00{index + 1}</span></div><div className="service-copy"><p className="eyebrow">{service.type}</p><h3>{service.name}</h3><p>{service.text}</p><a className="text-link" href="#quote">Talk to us <span>-></span></a></div></article>)}</div></section>
-
-        <section className="methods section-pad"><div className="methods-intro"><p className="eyebrow">03 / The details</p><h2>Material is<br /><em>part of the message.</em></h2><p>Choose the method and material that makes sense for your project. We will help you find the right combination.</p></div><div className="method-columns"><div><span className="number">01</span><h3>Printing methods</h3><ul><li>Digital printing</li><li>Offset printing</li><li>Screen printing</li><li>Other methods</li></ul></div><div><span className="number">02</span><h3>Materials</h3><ul><li>Art paper</li><li>Cardboard</li><li>Sticker paper</li><li>PVC / Acrylic</li><li>Other materials</li></ul></div></div></section>
-
-        <section className="process section-pad" id="process"><div className="section-heading"><div><p className="eyebrow">04 / From idea to in hand</p><h2>How it<br /><em>works.</em></h2></div><p className="section-aside">Orders happen through WhatsApp or at our store. We keep every step clear, considered and personal.</p></div><div className="process-grid">{["Share your design", "Artwork confirmed", "Order confirmed", "Advance payment", "Printing begins", "Collect or delivery", "Full payment"].map((step, index) => <div className="process-step" key={step}><span>0{index + 1}</span><h3>{step}</h3><p>{index === 0 ? "Bring your preferred design. You do not need to have artwork ready - we can assist." : index === 3 ? "Advance payment is required before production." : index === 5 ? "Collect from our store or request worldwide delivery." : "We keep you updated as your order moves forward."}</p></div>)}</div></section>
-
-        <section className="portfolio section-pad"><div className="section-heading"><div><p className="eyebrow">05 / A selection of possibilities</p><h2>Made to be<br /><em>looked at twice.</em></h2></div><div className="filter-row">{["All", "Wedding", "Engagement", "Birthday", "Corporate", "Custom"].map((filter) => <button className={galleryFilter === filter ? "filter active" : "filter"} onClick={() => setGalleryFilter(filter)} key={filter}>{filter}</button>)}</div></div><div className="gallery">{filteredGallery.map((item, index) => <figure className={`gallery-item gallery-${index + 1}`} key={item.name}><img src={item.image} alt={`${item.name} placeholder`} loading="lazy" /><figcaption><span>{item.category}</span><strong>{item.name}</strong></figcaption></figure>)}</div><p className="gallery-note">Portfolio imagery shown as placeholders until Screen Line client photography is provided.</p></section>
-
-        <section className="why section-pad"><div><p className="eyebrow">06 / Why Screen Line</p><h2>Quietly<br /><em>particular.</em></h2></div><div className="why-copy"><p className="large-copy">We are here for the details that make a print feel like yours.</p><div className="why-points"><p><strong>01</strong> Small enough to listen. Experienced enough to advise.</p><p><strong>02</strong> From first idea to finished piece, one thoughtful process.</p><p><strong>03</strong> Worldwide reach, with a local studio in Colombo 11.</p></div></div></section>
-
-        <section className="reviews section-pad"><p className="eyebrow">07 / A note from us</p><h2>Customer reviews<br /><em>coming soon.</em></h2><p>We will share real words from Screen Line customers here when they are ready.</p></section>`r`n`r`n        <section className="delivery section-pad"><div className="delivery-card"><p className="eyebrow">08 / Near or far</p><h2>Collect here.<br /><em>Send anywhere.</em></h2><p>Pick up from the store in Pettah, or request delivery worldwide. We will confirm the best option when we review your project.</p><div className="delivery-actions"><a className="button light" href="#contact">Visit the store <span>-></span></a><a className="text-link light-link" href={whatsappLink("Hello Screen Line Printers, I would like to ask about delivery.")} target="_blank" rel="noreferrer">Ask about delivery <span>-></span></a></div></div><div className="payment-note"><span className="number">09</span><h3>Secure online payment</h3><p>Payment integration is ready for the provider selected by the client. Advance payment is required before production.</p><span className="coming-soon">Ready for integration</span></div></section>
-
-        <section className="quote section-pad" id="quote"><div className="quote-intro"><p className="eyebrow">09 / Start a conversation</p><h2>Tell us what<br /><em>you are making.</em></h2><p>Every project is different. Request a personalised quote based on your product, quantity, materials and printing requirements.</p><div className="calculator"><span className="number">A / Quote calculator</span><h3>Quantity x product + printing</h3><p>Your final price depends on your selected specifications. Request a Quote for the exact price.</p><a className="text-link" href="#quote-form">Request exact quote <span>-></span></a></div></div><form className="quote-form" id="quote-form" onSubmit={(event) => { event.preventDefault(); setQuoteSent(true); }}><div className="form-row"><label>Customer name<input required name="name" placeholder="Your name" /></label><label>WhatsApp number<input required name="phone" type="tel" placeholder="077 000 0000" /></label></div><div className="form-row"><label>Email<input required name="email" type="email" placeholder="you@email.com" /></label><label>Printing service<select required name="service" defaultValue=""><option value="" disabled>Select a service</option><option>Wedding invitations</option><option>Business stationery</option><option>Packaging</option><option>Custom printing</option></select></label></div><div className="form-row"><label>Quantity<input required name="quantity" type="number" min="1" placeholder="How many?" /></label><label>Required date<input required name="date" type="date" /></label></div><div className="form-row"><label>Required material<select required name="material" defaultValue=""><option value="" disabled>Select material</option><option>Art paper</option><option>Cardboard</option><option>Sticker paper</option><option>PVC / Acrylic</option><option>Other</option></select></label><label>Printing method<select required name="method" defaultValue=""><option value="" disabled>Select method</option><option>Digital printing</option><option>Offset printing</option><option>Screen printing</option><option>Other</option></select></label></div><label>Project description<textarea required name="description" rows="3" placeholder="Tell us about the size, finish and feeling you have in mind..." /></label><label className="file-input">Artwork upload <input type="file" accept="application/pdf,.pdf" onChange={(event) => setFileName(event.target.files[0]?.name || "")} /><span>{fileName || "Attach a PDF (optional)"}</span></label><button className="button dark" type="submit">Request my quote <span>-></span></button>{quoteSent && <div className="form-success"><strong>Your request is ready to send.</strong><p>Thank you. Send the details through WhatsApp so we can review your project personally.</p><a className="button whatsapp" href={whatsappLink("Hello Screen Line Printers, I have submitted a quote request and would like to continue.")} target="_blank" rel="noreferrer">Get a quote on WhatsApp -></a></div>}</form></section>
-
-        <section className="tracking section-pad"><div><p className="eyebrow">10 / Keep an eye on it</p><h2>Order<br /><em>tracking.</em></h2></div><div className="tracking-panel"><p>Frontend-ready for live order updates. Enter your order number to check progress once tracking is connected.</p><form onSubmit={(event) => { event.preventDefault(); setTracking(true); }}><input required placeholder="Order number" aria-label="Order number" /><button className="button outline" type="submit">Check status <span>-></span></button></form>{tracking && <div className="tracking-status"><span className="status-dot" /> Live tracking will appear here once your order is connected.</div>}<div className="status-line">{["Order received", "Artwork confirmed", "Payment confirmed", "Printing", "Ready for collection", "Delivered"].map((status) => <span key={status}>{status}</span>)}</div></div></section>
-
-        <section className="contact section-pad" id="contact"><div className="contact-paper"><div className="paper-top"><span>SL / 2006</span><span>Invitation to visit</span></div><p className="eyebrow">Come say hello</p><h2>Screen Line<br /><em>Printers</em></h2><div className="contact-details"><p>Maliban Street No. 12<br />Colombo 11, Pettah<br />Sri Lanka</p><p><a href="tel:+94777278833">077 727 8833</a><br /><a href="mailto:screenline_printers@yahoo.com">screenline_printers@yahoo.com</a><br />10:00 AM - 6:00 PM</p></div><div className="contact-actions"><a className="button dark" href="tel:+94777278833">Call us <span>-></span></a><a className="button outline" href={whatsappLink()} target="_blank" rel="noreferrer">WhatsApp us <span>-></span></a></div><div className="paper-stamp">SLP</div></div><div className="map-panel"><div className="map-grid"><span>COLOMBO 11</span><span>PETTAH</span><span>Maliban<br />Street</span><b>12</b></div><p>Maliban Street No. 12,<br />Colombo 11, Pettah, Sri Lanka</p><a className="text-link" href="https://www.google.com/maps/search/?api=1&query=Maliban+Street+No.+12+Colombo+11+Pettah+Sri+Lanka" target="_blank" rel="noreferrer">Get directions <span>-></span></a></div></section>
-      </main>
-
-      <footer><div className="footer-brand"><span className="brand-mark">SL</span><h2>Screen Line<br /><em>Printers</em></h2></div><div><p className="eyebrow">Find us online</p><a href="https://www.instagram.com/sl.printers/" target="_blank" rel="noreferrer">Instagram -></a><a href="https://www.facebook.com/share/1HbCmS6GKk/" target="_blank" rel="noreferrer">Facebook -></a></div><div><p className="eyebrow">Have a project?</p><a href="#quote">Request a quote -></a><a href={whatsappLink()} target="_blank" rel="noreferrer">WhatsApp us -></a></div><div className="footer-bottom"><span>(c) 2026 Screen Line Printers</span><span>Premium printing & invitations / Colombo, Sri Lanka</span><span>HTTPS-ready / Secure hosting ready</span></div></footer>
-      <a className="floating-whatsapp" href={whatsappLink()} target="_blank" rel="noreferrer" aria-label="WhatsApp Screen Line Printers">WA <span>WhatsApp us</span></a>
-    </div>
-  );
-}
-
-createRoot(document.getElementById("root")).render(<StrictMode><App /></StrictMode>);
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <HashRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Layout>
+    </HashRouter>
+  </StrictMode>
+);
