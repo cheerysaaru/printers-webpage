@@ -33,7 +33,7 @@ export default function About() {
         <div className="wrap">
           <div className="eyebrow">Our Story</div>
           <h1>Eighteen years of<br /><em>ink, paper & craft</em></h1>
-          <p className="sub">Screen Line Printers has been Pettah's trusted printing house since 2008. What started as a small offset press has grown into a full-service printing studio — but the hands-on approach hasn't changed.</p>
+          <p className="sub">Screen Line Printers has been a staple in Pettah since 2008. What began as a small offset press has evolved into a comprehensive printing studio — yet our commitment to manual craft and personal service remains at the heart of everything we print.</p>
         </div>
       </section>
 
@@ -42,9 +42,9 @@ export default function About() {
           <div className="about-grid reveal">
             <div className="about-content">
               <h2>We don't just design invitations — we print them.</h2>
-              <p>Unlike design studios that outsource the actual printing, Screen Line Printers is the press. Every invitation, business card, sticker, and box that leaves our studio has been printed, cut, and finished right here in Pettah.</p>
-              <p>Over eighteen years, we've refined three distinct printing methods — offset, screen, and digital — and matched each to the right material and finish. That means your wedding invitation isn't just designed beautifully — it's printed beautifully too.</p>
-              <p>Our clients include families planning weddings, businesses building their brand, and event organisers who need reliable, high-quality printing. What they share is a desire for something custom, not something off the shelf.</p>
+              <p>Unlike design studios that outsource production, Screen Line Printers *is* the press. Every invitation, business card, sticker, and box that leaves our doors is printed, cut, and finished by hand right here in our Colombo studio.</p>
+              <p>Over the past eighteen years, we have mastered three distinct printing methods — offset, screen, and digital — and meticulously matched each one to the finest materials. This ensures your wedding invitation, branding collateral, or packaging isn't just designed beautifully — it is produced with technical excellence.</p>
+              <p>Our clientele includes families celebrating weddings, businesses strengthening their brand identity, and event organisers who demand reliable, high-end production. What unites them is a shared appreciation for bespoke, custom-crafted work over mass-produced alternatives.</p>
             </div>
             <div className="about-visual">
               <div className="about-card">
@@ -65,7 +65,7 @@ export default function About() {
         <div className="wrap">
           <div className="section-head reveal">
             <div className="eyebrow centered">Our Journey</div>
-            <h2>From a single press<br />to a full studio</h2>
+            <h2>From a single press<br />to a full-service studio</h2>
           </div>
           <div className="timeline reveal">
             {milestones.map((m, i) => (
@@ -82,29 +82,29 @@ export default function About() {
       <section className="values-section">
         <div className="wrap">
           <div className="section-head reveal">
-            <div className="eyebrow centered">What Drives Us</div>
+            <div className="eyebrow centered">Core Values</div>
             <h2>Craft over convenience</h2>
           </div>
           <div className="values-grid reveal stagger">
             <div className="value-card">
               <div className="value-icon">✦</div>
               <h4>Precision</h4>
-              <p>Every print is checked, every cut is measured. We don't rush — we refine.</p>
+              <p>Every print is meticulously checked, every cut measured. We do not rush; we refine.</p>
             </div>
             <div className="value-card">
               <div className="value-icon">✦</div>
-              <h4>Personal Service</h4>
-              <p>You work directly with the people who print your order. No middlemen.</p>
+              <h4>Direct Collaboration</h4>
+              <p>You work directly with the craftspeople printing your project. No intermediaries.</p>
             </div>
             <div className="value-card">
               <div className="value-icon">✦</div>
-              <h4>Material Knowledge</h4>
-              <p>We know paper, PVC, acrylic, and cardboard — and which one fits your project.</p>
+              <h4>Material Expertise</h4>
+              <p>We possess deep knowledge of paper, PVC, acrylic, and cardboard, ensuring the perfect match for your vision.</p>
             </div>
             <div className="value-card">
               <div className="value-icon">✦</div>
               <h4>Reliability</h4>
-              <p>Eighteen years of on-time delivery. When we say it's ready, it's ready.</p>
+              <p>Eighteen years of on-time delivery. When we commit to a deadline, we deliver.</p>
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@ export default function About() {
         <h2>Ready to bring your design<br />to life?</h2>
         <div className="cta-band-ctas">
           <a href="https://wa.me/94777278833?text=Hi,%20I'd%20like%20a%20quote%20for%20general%20inquiry" className="btn btn-primary btn-gold" target="_blank" rel="noreferrer">Message Us on WhatsApp</a>
-          <a href="https://www.google.com/maps/search/?api=1&query=Maliban+Street+No.+12+Colombo+11+Pettah+Sri+Lanka" className="btn btn-outline-light" target="_blank" rel="noreferrer">Visit Our Store</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Maliban+Street+No.+12+Colombo+11+Pettah+Sri+Lanka" className="btn btn-outline-light" target="_blank" rel="noreferrer">Visit Our Studio</a>
         </div>
       </section>
     </>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import QuoteModal from "./QuoteModal";
 import ContactModal from "./ContactModal";
@@ -34,12 +34,25 @@ export default function Layout({ children }) {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuOpen && menuRef.current && !menuRef.current.contains(event.target) && !event.target.closest(".hamburger")) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [menuOpen]);
+
   return (
     <div className="site">
       <header className={scrolled ? "scrolled" : ""}>
         <nav>
           <Link to="/" className="logo-link">Screen Line Printers</Link>
-          <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+          <div className={`nav-links ${menuOpen ? "open" : ""}`} ref={menuRef}>
+            <button className="menu-close" onClick={() => setMenuOpen(false)} aria-label="Close menu">×</button>
             <Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link>
             <Link to="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link>
             <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>

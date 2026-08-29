@@ -3,15 +3,15 @@ import { useState, useEffect } from "react";
 const categories = ["All", "Invitations", "Business Cards", "Stickers", "Packaging", "Event"];
 
 const portfolioItems = [
-  { id: 1, name: "The Serene Suite", category: "Invitations", method: "OFFSET", num: "014", tint1: "var(--gold-bright)", tint2: "var(--gold)" },
-  { id: 2, name: "Classic Romance", category: "Invitations", method: "OFFSET", num: "027", tint1: "var(--ivory-deep)", tint2: "var(--gold-bright)" },
-  { id: 3, name: "Timeless Arch", category: "Invitations", method: "DIGITAL", num: "031", tint1: "var(--ivory-deep)", tint2: "var(--gold)" },
+  { id: 1, name: "The Serene Suite", category: "Invitations", method: "OFFSET", num: "014", tint1: "var(--sage-light)", tint2: "var(--sage)" },
+  { id: 2, name: "Classic Romance", category: "Invitations", method: "OFFSET", num: "027", tint1: "var(--ivory-deep)", tint2: "var(--sage-light)" },
+  { id: 3, name: "Timeless Arch", category: "Invitations", method: "DIGITAL", num: "031", tint1: "var(--ivory-deep)", tint2: "var(--sage)" },
   { id: 4, name: "Bold Press Co.", category: "Business Cards", method: "SCREEN", num: "045", tint1: "var(--ivory-deep)", tint2: "var(--espresso-soft)" },
-  { id: 5, name: "Spice Garden Labels", category: "Stickers", method: "SCREEN", num: "052", tint1: "var(--ivory-deep)", tint2: "var(--gold-bright)" },
+  { id: 5, name: "Spice Garden Labels", category: "Stickers", method: "SCREEN", num: "052", tint1: "var(--ivory-deep)", tint2: "var(--sage-light)" },
   { id: 6, name: "Celestial Wedding", category: "Invitations", method: "OFFSET", num: "063", tint1: "var(--ivory)", tint2: "var(--ivory-deep)" },
-  { id: 7, name: "Bake & Co. Packaging", category: "Packaging", method: "DIGITAL", num: "071", tint1: "var(--ivory-deep)", tint2: "var(--gold-bright)" },
-  { id: 8, name: "Heritage Events Suite", category: "Event", method: "OFFSET", num: "088", tint1: "var(--ivory-deep)", tint2: "var(--gold-bright)" },
-  { id: 9, name: "Modern minimal Cards", category: "Business Cards", method: "DIGITAL", num: "094", tint1: "var(--ivory-deep)", tint2: "var(--gold-bright)" },
+  { id: 7, name: "Bake & Co. Packaging", category: "Packaging", method: "DIGITAL", num: "071", tint1: "var(--ivory-deep)", tint2: "var(--sage-light)" },
+  { id: 8, name: "Heritage Events Suite", category: "Event", method: "OFFSET", num: "088", tint1: "var(--ivory-deep)", tint2: "var(--sage-light)" },
+  { id: 9, name: "Modern minimal Cards", category: "Business Cards", method: "DIGITAL", num: "094", tint1: "var(--ivory-deep)", tint2: "var(--sage-light)" },
 ];
 
 export default function Portfolio() {
@@ -51,9 +51,9 @@ export default function Portfolio() {
     <>
       <section className="page-hero">
         <div className="wrap">
-          <div className="eyebrow">Portfolio</div>
-          <h1>Stories told<br /><em>through paper</em></h1>
-          <p className="sub">A selection of suites and projects from our studio. Each piece is printed, cut, and finished by hand.</p>
+          <div className="eyebrow">Our Portfolio</div>
+          <h1>Artistry in<br /><em>every impression</em></h1>
+          <p className="sub">A curated selection of invitation suites and custom print projects. Every piece here reflects our commitment to hand-finished quality and bespoke design.</p>
         </div>
       </section>
 
@@ -114,8 +114,8 @@ export default function Portfolio() {
       )}
 
       <section className="cta-band">
-        <div className="eyebrow centered">Custom Work</div>
-        <h2>Have a design in mind?<br />Let's make it real.</h2>
+        <div className="eyebrow centered">Bespoke Projects</div>
+        <h2>Have a unique vision?<br />Let's craft it together.</h2>
         <div className="cta-band-ctas">
           <a href="https://wa.me/94777278833?text=Hi,%20I'd%20like%20a%20quote%20for%20a%20custom%20design" className="btn btn-primary btn-gold" target="_blank" rel="noreferrer">Message Us on WhatsApp</a>
         </div>

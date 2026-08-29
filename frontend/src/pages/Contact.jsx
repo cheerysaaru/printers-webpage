@@ -41,9 +41,9 @@ export default function Contact() {
     <>
       <section className="page-hero">
         <div className="wrap">
-          <div className="eyebrow">Get in Touch</div>
-          <h1>Let's start<br /><em>your project</em></h1>
-          <p className="sub">Whether you have a design ready or just an idea, we're here to help. WhatsApp us for the fastest response.</p>
+          <div className="eyebrow">Connect with Us</div>
+          <h1>Let's bring<br /><em>your vision to the press</em></h1>
+          <p className="sub">Whether you have a finished design or just the seed of an idea, we're here to craft it. Reach out via WhatsApp for the fastest response — we look forward to hearing from you.</p>
         </div>
       </section>
 
@@ -52,13 +52,13 @@ export default function Contact() {
           <div className="contact-grid">
             <div className="contact-form-wrap reveal">
               <h2>Send Us a Message</h2>
-              <p className="contact-form-note">We'll get back to you within a few hours on WhatsApp.</p>
+              <p className="contact-form-note">We typically reply within a few hours on WhatsApp.</p>
 
               {submitted ? (
                 <div className="form-success">
                   <div className="success-icon">✓</div>
                   <h3>Message Sent!</h3>
-                  <p>We'll open WhatsApp with your message. Thank you!</p>
+                  <p>Your message has been prepared for WhatsApp. Thank you for reaching out!</p>
                   <button className="btn btn-outline" onClick={() => { setSubmitted(false); setFormData({ name: "", phone: "", interest: "", message: "" }); }}>Send Another</button>
                 </div>
               ) : (
@@ -72,9 +72,9 @@ export default function Contact() {
                     <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required placeholder="e.g. 077 123 4567" />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="interest">What Are You Looking For?</label>
+                    <label htmlFor="interest">Project Interest</label>
                     <select id="interest" name="interest" value={formData.interest} onChange={handleChange} required>
-                      <option value="">Select a product...</option>
+                      <option value="">Select a category...</option>
                       <option value="Wedding Invitations">Wedding Invitations</option>
                       <option value="Event Invitations">Event Invitations</option>
                       <option value="Business Cards">Business Cards</option>
@@ -86,7 +86,7 @@ export default function Contact() {
                   </div>
                   <div className="form-group">
                     <label htmlFor="message">Message (optional)</label>
-                    <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows="4" placeholder="Tell us about your project, quantity, deadline..."></textarea>
+                    <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows="4" placeholder="Tell us a bit about your vision, quantity, or deadline..."></textarea>
                   </div>
                   <button type="submit" className="btn btn-primary btn-lg">
                     <span className="btn-text">Send on WhatsApp</span>
@@ -97,10 +97,10 @@ export default function Contact() {
             </div>
 
             <div className="contact-info reveal">
-              <h2>Visit Us</h2>
+              <h2>Visit Our Studio</h2>
               <div className="contact-details">
                 <div className="contact-item">
-                  <span className="contact-label">Address</span>
+                  <span className="contact-label">Studio Address</span>
                   <span>Maliban Street No. 12,<br />Colombo 11, Pettah, Sri Lanka</span>
                 </div>
                 <div className="contact-item">
@@ -112,12 +112,12 @@ export default function Contact() {
                   <a href="mailto:screenline_printers@yahoo.com">screenline_printers@yahoo.com</a>
                 </div>
                 <div className="contact-item">
-                  <span className="contact-label">Hours</span>
+                  <span className="contact-label">Operating Hours</span>
                   <span>Monday – Saturday<br />10:00 AM – 6:00 PM</span>
                 </div>
                 <div className="contact-item">
-                  <span className="contact-label">WhatsApp</span>
-                  <a href="https://wa.me/94777278833" target="_blank" rel="noreferrer">Chat with us directly</a>
+                  <span className="contact-label">Quick Chat</span>
+                  <a href="https://wa.me/94777278833" target="_blank" rel="noreferrer">Chat with us on WhatsApp</a>
                 </div>
               </div>
 
@@ -139,7 +139,7 @@ export default function Contact() {
       </section>
 
       <section className="cta-band">
-        <div className="eyebrow centered">Prefer WhatsApp?</div>
+        <div className="eyebrow centered">Prefer Instant Messaging?</div>
         <h2>Skip the form —<br />message us directly</h2>
         <div className="cta-band-ctas">
           <a href="https://wa.me/94777278833?text=Hi,%20I'd%20like%20a%20quote%20for%20general%20inquiry" className="btn btn-primary btn-gold" target="_blank" rel="noreferrer">Open WhatsApp</a>

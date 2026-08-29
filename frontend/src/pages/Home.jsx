@@ -23,9 +23,9 @@ const processSteps = [
 ];
 
 const portfolio = [
-  { num: "01", name: "The Serene Suite", tag: "Invitation Suite", tint1: "var(--gold-bright)", tint2: "var(--gold)" },
-  { num: "02", name: "Classic Romance", tag: "Wedding Stationery", tint1: "var(--ivory-deep)", tint2: "var(--gold-bright)" },
-  { num: "03", name: "Timeless Arch", tag: "Event Cards", tint1: "var(--ivory-deep)", tint2: "var(--gold)" },
+  { num: "01", name: "The Serene Suite", tag: "Invitation Suite", tint1: "var(--sage-light)", tint2: "var(--sage)" },
+  { num: "02", name: "Classic Romance", tag: "Wedding Stationery", tint1: "var(--ivory-deep)", tint2: "var(--sage-light)" },
+  { num: "03", name: "Timeless Arch", tag: "Event Cards", tint1: "var(--ivory-deep)", tint2: "var(--sage)" },
 ];
 
 const marqueeItems = ["Art Paper", "Cardboard", "Sticker Paper", "PVC", "Acrylic", "Offset Printing", "Screen Printing", "Digital Printing"];
@@ -83,11 +83,11 @@ export default function Home() {
           <div className="hero-caption">
             <div className="eyebrow hero-eyebrow">Est. 2008 · Pettah, Colombo</div>
             <h1 className="hero-title">
-              <span className="hero-line">Every invitation,</span>
-              <span className="hero-line"><em>beautifully</em> printed.</span>
-              <span className="hero-line">Crafted in Colombo.</span>
+              <span className="hero-line">Your story,</span>
+              <span className="hero-line"><em>beautifully</em> pressed.</span>
+              <span className="hero-line">Crafted in Pettah.</span>
             </h1>
-            <p className="sub hero-sub">Screen Line Printers has spent eighteen years turning first drafts into keepsakes — bespoke wedding and event invitations, letterpress details, and packaging, printed and finished by hand in Colombo.</p>
+            <p className="sub hero-sub">For eighteen years, Screen Line Printers has turned visions into keepsakes. From bespoke wedding suites to artisanal packaging, every detail is printed and finished by hand in our Pettah studio.</p>
             <div className="hero-ctas">
               <a href={whatsappLink()} className="btn btn-primary btn-lg" target="_blank" rel="noreferrer">
                 <span className="btn-text">WhatsApp Us</span>
@@ -103,7 +103,7 @@ export default function Home() {
       <div className="stats-strip reveal">
         <div className="stat">
           <span className="stat-num">18</span>
-          <span className="stat-label">Years Established</span>
+          <span className="stat-label">Years of Craft</span>
         </div>
         <div className="stat">
           <span className="stat-num">500+</span>
@@ -127,7 +127,7 @@ export default function Home() {
       <section id="services">
         <div className="wrap">
           <div className="section-head reveal">
-            <div className="eyebrow centered">What We Craft</div>
+            <div className="eyebrow centered">Our Craft</div>
             <h2>From the first fold to<br />the final delivery</h2>
           </div>
           <div className="craft-grid reveal stagger">

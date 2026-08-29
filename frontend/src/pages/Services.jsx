@@ -45,16 +45,16 @@ export default function Services() {
     <>
       <section className="page-hero">
         <div className="wrap">
-          <div className="eyebrow">What We Do</div>
-          <h1>Printing services<br /><em>matched to your finish</em></h1>
-          <p className="sub">Three printing methods. Five material categories. Unlimited possibilities. We help you choose the right combination for your project.</p>
+          <div className="eyebrow">Our Services</div>
+          <h1>Tailored printing<br /><em>for every project</em></h1>
+          <p className="sub">Three distinct printing methods. Five premium material categories. Unlimited possibilities. We bridge the gap between your vision and a tangible, perfectly finished product.</p>
         </div>
       </section>
 
       <section>
         <div className="wrap">
           <div className="section-head reveal">
-            <div className="eyebrow centered">Printing Methods</div>
+            <div className="eyebrow centered">Methods</div>
             <h2>How we print</h2>
           </div>
           <div className="methods-grid reveal stagger">
@@ -77,7 +77,7 @@ export default function Services() {
         <div className="wrap">
           <div className="section-head reveal">
             <div className="eyebrow centered">Materials</div>
-            <h2>We work with</h2>
+            <h2>Materials we craft with</h2>
           </div>
           <div className="materials-grid reveal stagger">
             {materials.map((m, i) => (
@@ -94,7 +94,7 @@ export default function Services() {
         <div className="wrap">
           <div className="section-head reveal">
             <div className="eyebrow centered">Products</div>
-            <h2>What we produce</h2>
+            <h2>Our production range</h2>
           </div>
           <div className="craft-grid reveal stagger">
             {products.map((p) => (
@@ -109,8 +109,8 @@ export default function Services() {
       </section>
 
       <section className="cta-band">
-        <div className="eyebrow centered">Need a Quote?</div>
-        <h2>Tell us what you need<br />and we'll make it happen</h2>
+        <div className="eyebrow centered">Ready to start?</div>
+        <h2>Tell us what you need<br />and we'll bring it to life</h2>
         <div className="cta-band-ctas">
           <a href="https://wa.me/94777278833?text=Hi,%20I'd%20like%20a%20quote%20for%20printing%20services" className="btn btn-primary btn-gold" target="_blank" rel="noreferrer">Message Us on WhatsApp</a>
         </div>
