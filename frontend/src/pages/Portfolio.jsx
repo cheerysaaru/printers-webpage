@@ -3,15 +3,15 @@ import { useState, useEffect } from "react";
 const categories = ["All", "Invitations", "Business Cards", "Stickers", "Packaging", "Event"];
 
 const portfolioItems = [
-  { id: 1, name: "The Serene Suite", category: "Invitations", method: "OFFSET", num: "014", tint1: "#EFE4CB", tint2: "#D8C79C" },
-  { id: 2, name: "Classic Romance", category: "Invitations", method: "OFFSET", num: "027", tint1: "#E7D9C8", tint2: "#C9AF8C" },
-  { id: 3, name: "Timeless Arch", category: "Invitations", method: "DIGITAL", num: "031", tint1: "#EAE2C6", tint2: "#CBB989" },
-  { id: 4, name: "Bold Press Co.", category: "Business Cards", method: "SCREEN", num: "045", tint1: "#D8D0C0", tint2: "#BFB49E" },
-  { id: 5, name: "Spice Garden Labels", category: "Stickers", method: "SCREEN", num: "052", tint1: "#E8DFC8", tint2: "#D4C4A0" },
-  { id: 6, name: "Celestial Wedding", category: "Invitations", method: "OFFSET", num: "063", tint1: "#F0E8D5", tint2: "#DDD0B5" },
-  { id: 7, name: "Bake & Co. Packaging", category: "Packaging", method: "DIGITAL", num: "071", tint1: "#E5DCC8", tint2: "#CFC2A5" },
-  { id: 8, name: "Heritage Events Suite", category: "Event", method: "OFFSET", num: "088", tint1: "#EBE3D0", tint2: "#D6C8AA" },
-  { id: 9, name: "Modern minimal Cards", category: "Business Cards", method: "DIGITAL", num: "094", tint1: "#E0D8C5", tint2: "#C8BB9F" },
+  { id: 1, name: "The Serene Suite", category: "Invitations", method: "OFFSET", num: "014", tint1: "var(--gold-bright)", tint2: "var(--gold)" },
+  { id: 2, name: "Classic Romance", category: "Invitations", method: "OFFSET", num: "027", tint1: "var(--ivory-deep)", tint2: "var(--gold-bright)" },
+  { id: 3, name: "Timeless Arch", category: "Invitations", method: "DIGITAL", num: "031", tint1: "var(--ivory-deep)", tint2: "var(--gold)" },
+  { id: 4, name: "Bold Press Co.", category: "Business Cards", method: "SCREEN", num: "045", tint1: "var(--ivory-deep)", tint2: "var(--espresso-soft)" },
+  { id: 5, name: "Spice Garden Labels", category: "Stickers", method: "SCREEN", num: "052", tint1: "var(--ivory-deep)", tint2: "var(--gold-bright)" },
+  { id: 6, name: "Celestial Wedding", category: "Invitations", method: "OFFSET", num: "063", tint1: "var(--ivory)", tint2: "var(--ivory-deep)" },
+  { id: 7, name: "Bake & Co. Packaging", category: "Packaging", method: "DIGITAL", num: "071", tint1: "var(--ivory-deep)", tint2: "var(--gold-bright)" },
+  { id: 8, name: "Heritage Events Suite", category: "Event", method: "OFFSET", num: "088", tint1: "var(--ivory-deep)", tint2: "var(--gold-bright)" },
+  { id: 9, name: "Modern minimal Cards", category: "Business Cards", method: "DIGITAL", num: "094", tint1: "var(--ivory-deep)", tint2: "var(--gold-bright)" },
 ];
 
 export default function Portfolio() {

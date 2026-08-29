@@ -23,9 +23,9 @@ const processSteps = [
 ];
 
 const portfolio = [
-  { num: "01", name: "The Serene Suite", tag: "Invitation Suite", tint1: "#EFE4CB", tint2: "#D8C79C" },
-  { num: "02", name: "Classic Romance", tag: "Wedding Stationery", tint1: "#E7D9C8", tint2: "#C9AF8C" },
-  { num: "03", name: "Timeless Arch", tag: "Event Cards", tint1: "#EAE2C6", tint2: "#CBB989" },
+  { num: "01", name: "The Serene Suite", tag: "Invitation Suite", tint1: "var(--gold-bright)", tint2: "var(--gold)" },
+  { num: "02", name: "Classic Romance", tag: "Wedding Stationery", tint1: "var(--ivory-deep)", tint2: "var(--gold-bright)" },
+  { num: "03", name: "Timeless Arch", tag: "Event Cards", tint1: "var(--ivory-deep)", tint2: "var(--gold)" },
 ];
 
 const marqueeItems = ["Art Paper", "Cardboard", "Sticker Paper", "PVC", "Acrylic", "Offset Printing", "Screen Printing", "Digital Printing"];
